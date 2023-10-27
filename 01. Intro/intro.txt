@@ -1,0 +1,47 @@
+"Laravel is a web application framework with expressive, elegant syntax"
+
+Web Application Framework?
+- Sebuah 'kerangka' yng didesain untuk mendukung pembangunan aplikasi web
+- menyediakan standar/cara untukm membangun aplikasi web
+- bertujuan untuk mengotomasi hal-hal umum yang biasanya dilakukan saat membangun aplikasi web
+- Contohnya: database library, templating engine, session management, authentication, security, dll
+
+LARAVEL DIBUAT OLEH
+TAYLOR OTWELL
+juni 2011
+sebagai alternatif framework untuk CodeIgniter
+
+Filosofi Laravel
+"We believe development must be an enjoyable, creative experince to be truly fulfilling" - Taylor Otwell
+
+
+Tujuan Laravel
+"Laravel aims to make the development process a pleasing one for the developer without sacrificing
+application functionality. Happy developers make the best code." Taylor otwell
+
+Fitur  utama pada laravel
+- MVC
+- Templating Engine
+- Artisan Console
+- Eloquent ORM
+- Authentication & Authorization
+- Testing
+- Pacakaging System
+- Multiple File System
+- Task Scheduling
+- Websocket Programing
+
+
+REQUIREMENT
+- PHP 7.4/8
+- MySQL
+- SequelPro/Mysqlo Workbench
+-Terminal/CMD/Powershell/gitbash
+- Code Editor: VSCODE
+- EXTENSION
+    PHP Intelephense
+    Laravel Artisan
+    Laravel Snippets
+    Laravel Blade Snippets
+    Laravel Blade Spacer 
+    Laravel GoTo View

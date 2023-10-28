@@ -1,6 +1,10 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,59 +36,11 @@ Route::get('/about', function () {
 
 
 
-Route::get('/blog', function () {
-    $blog_posts = [
-        [
-            "title" => "Judul Post Pertama",
-            "slug" => "judul-post-pertama",
-            "author" => "Wildan Fauzan",
-            "body" => "Lorem ipsum dolor sit amet, 
-            consectetur adipisicing elit. Deserunt, ducimus deleniti. Saepe nesciunt error explicabo veniam omnis optio dolorum corporis aliquam quasi alias, quod quam, rem maxime debitis rerum odio deleniti. Recusandae exercitationem ipsum porro excepturi sint voluptate odit temporibus, doloremque cumque culpa laboriosam neque doloribus deleniti incidunt quisquam quas dolores quo nam ab ullam magnam rerum facere, eveniet expedita? A, repudiandae? Placeat adipisci voluptas magni quisquam, ullam velit unde veritatis. Iste dolor nemo vel corrupti rem? Delectus, sunt ea."
-        ],
-        [
-            "title" => "Judul Post Kedua",
-            "slug" => "judul-post-kedua",
-            "author" => "Aufaa Husniati",
-            "body" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, ducimus deleniti. Saepe nesciunt error explicabo veniam omnis optio dolorum corporis aliquam quasi alias, quod quam, rem maxime debitis rerum odio deleniti. Recusandae exercitationem ipsum porro excepturi sint voluptate odit temporibus, doloremque cumque culpa laboriosam neque doloribus deleniti incidunt quisquam quas dolores quo nam ab ullam magnam rerum facere, eveniet expedita? A, repudiandae? Placeat adipisci voluptas magni quisquam, ullam velit unde veritatis. Iste dolor nemo vel corrupti rem? Delectus, sunt ea awkoawkoawkoawkawok uno dos tres quatros kaowkoawkaowkawokawkoawok."
-        ],      
-    ];
-
-    
-    // return 'Halaman Blog';
-    return view('posts', [
-        "title" => "Posts",
-        "posts" => $blog_posts
-    ]);
-});
-
-
-
+Route::get('/posts', [PostController::class, 'index']);
 // Halaman Single Post
-Route::get('posts/{slug}', function($slug) {
-    $blog_posts = [
-        [
-            "title" => "Judul Post Pertama",
-            "slug" => "judul-post-pertama",
-            "author" => "Wildan Fauzan",
-            "body" => "Lorem ipsum dolor sit amet, 
-            consectetur adipisicing elit. Deserunt, ducimus deleniti. Saepe nesciunt error explicabo veniam omnis optio dolorum corporis aliquam quasi alias, quod quam, rem maxime debitis rerum odio deleniti. Recusandae exercitationem ipsum porro excepturi sint voluptate odit temporibus, doloremque cumque culpa laboriosam neque doloribus deleniti incidunt quisquam quas dolores quo nam ab ullam magnam rerum facere, eveniet expedita? A, repudiandae? Placeat adipisci voluptas magni quisquam, ullam velit unde veritatis. Iste dolor nemo vel corrupti rem? Delectus, sunt ea."
-        ],
-        [
-            "title" => "Judul Post Kedua",
-            "slug" => "judul-post-kedua",
-            "author" => "Aufaa Husniati",
-            "body" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, ducimus deleniti. Saepe nesciunt error explicabo veniam omnis optio dolorum corporis aliquam quasi alias, quod quam, rem maxime debitis rerum odio deleniti. Recusandae exercitationem ipsum porro excepturi sint voluptate odit temporibus, doloremque cumque culpa laboriosam neque doloribus deleniti incidunt quisquam quas dolores quo nam ab ullam magnam rerum facere, eveniet expedita? A, repudiandae? Placeat adipisci voluptas magni quisquam, ullam velit unde veritatis. Iste dolor nemo vel corrupti rem? Delectus, sunt ea awkoawkoawkoawkawok uno dos tres quatros kaowkoawkaowkawokawkoawok."
-        ],      
-    ];
+Route::get('posts/{slug}', [PostController::class, 'show']);
 
-    $new_post = [];
-    foreach($blog_posts as $post) 
-        if($post["slug"] === $slug) {
-            $new_post = $post;
-    }
-    return view('post', [
-        "title" => "Single Post",
-        "post" => $new_post
-    ]);
-    
-});
+
+ 
+ 
+ 

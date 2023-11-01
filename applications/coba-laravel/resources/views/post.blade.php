@@ -5,9 +5,10 @@
 
 @section('container')
 <article>
-    <h2>{{ $post["title"] }}</h2>
-    <h5>{{ $post["author"] }}</h5>
-    <p>{{ $post["body"] }}</p>
+    <h1 class="mb-5">{{ $post->title }}</h2>
+
+    {!! $post->body !!} {{-- Melakukan sebuah escaping. sebuah escape character agar tag html dijalankan --}}
+
     <a href="/posts">Back to Posts</a>
 </article>
     

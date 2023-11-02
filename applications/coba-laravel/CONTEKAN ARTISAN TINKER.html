@@ -1,0 +1,32 @@
+CONTEKAN ARTISAN TINKER CREATE MODEL -> php artisan make:model -m [Nama model]
+MENCARIKAN POSTINGAN SESUAI KATEGORI -> App\Models\Post::where('category_id',
+1)->get() App\Models\Category::create([ 'name' => 'Personal', 'slug' =>
+'personal' ]) App\Models\Post::create([ 'title' => 'Judul Ke Tiga',
+'category_id' => 3, 'slug' => 'judul-ke-tiga', 'excerpt' => 'Lorem ipsum dolor
+sit amet consectetur adipisicing elit. Quasi, perspiciatis?', 'body' => '
+<p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit quos iusto
+    neque hic doloremque libero exercitationem quam facilis eveniet nam
+    doloribus, provident assumenda, a consectetur accusantium maiores corporis
+    aliquam eligendi aut quis beatae! Temporibus voluptas ipsa iure ex quae
+    pariatur modi rem reiciendis eveniet sed quasi quos fugiat, repellat
+    cupiditate optio vero tenetur nemo incidunt tempora asperiores assumenda.
+    Laboriosam, dolores! Dolorum magnam velit commodi nesciunt dolorem
+    dignissimos! Incidunt laboriosam at nulla eligendi laudantium aperiam iure.
+</p>
+<p>
+    Dolor dolorem modi veritatis doloribus deserunt id voluptas quaerat
+    aspernatur, ducimus laborum corrupti delectus eius quidem. Minima quam
+    asperiores iusto voluptatibus quia explicabo non reiciendis laboriosam ipsum
+    cumque repellat ad distinctio voluptate aliquid, dolore ducimus? Placeat
+    veniam aut alias repellendus accusantium quaerat architecto molestiae
+    numquam!
+</p>
+<p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+    perferendis veniam cumque placeat nisi nesciunt sed labore earum! Nesciunt
+    ab quam dolores laboriosam! Eius recusandae autem eos et, commodi
+    voluptatem?
+</p>
+' ]) hasMany -> one-to-many C/ satu user punya banyak postingan belongsTo ->
+one-to-one C/ satu postingan satu user belongsToMany ->

@@ -51,17 +51,17 @@ Route::get('/categories', function() {
 
 
 Route::get('/categories/{category:slug}', function(Category $category) {
-    return view('category', [
-        'title' => $category->name,
-        'posts' => $category->posts,
-        'category' => $category->name,
+    return view('posts', [
+        'title' => "Post by Category : $category->name",
+        'posts' => $category->posts->load('category', 'author')
     ]);
 });
 
 Route::get('/authors/{author:username}', function(User $author){
     return view('posts', [
-        'title' => 'User Posts',
-        'posts' => $author->posts
+        'title' => "Post By Author : $author->name",
+        'posts' => $author->posts->load('category', 'author')
+        // penggunaan load() untuk lazy eager loading sama fungsinya untuk mengoptimalkan query
     ]);
 });
  

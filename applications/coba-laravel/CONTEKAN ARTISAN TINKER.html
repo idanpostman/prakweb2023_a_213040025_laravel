@@ -1,5 +1,10 @@
 CONTEKAN ARTISAN TINKER CREATE MODEL -> php artisan make:model -m [Nama model]
 MENCARIKAN POSTINGAN SESUAI KATEGORI -> App\Models\Post::where('category_id',
+
+COntekan Factory -> php artisan make:factory PostFactory
+
+Contekan membuat Model sekaligus factory, migrasi, dan seeder -> php artisan make:model <NAMA MODEL> -nfs 
+
 1)->get() App\Models\Category::create([ 'name' => 'Personal', 'slug' =>
 'personal' ]) App\Models\Post::create([ 'title' => 'Judul Ke Tiga',
 'category_id' => 3, 'slug' => 'judul-ke-tiga', 'excerpt' => 'Lorem ipsum dolor

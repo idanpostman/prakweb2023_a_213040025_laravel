@@ -12,9 +12,10 @@ class PostController extends Controller
     {
         return view('posts', [
             "title" => "All Posts",
+            "active" => 'posts',
             // "posts" => Post::all()
-            "posts" => Post::with(['author', 'category'])->latest()->get()
-            // with() adalah penggunaan eager loading supaya mengefesiensikan query
+            "posts" => Post::latest()->get()
+         
         ]); 
     }
 
@@ -22,6 +23,7 @@ class PostController extends Controller
     {
         return view('post', [
             "title" => "Single Post",
+            "active" => 'posts',
             "post" => $post
         ]);
     }

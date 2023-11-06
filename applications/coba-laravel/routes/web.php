@@ -58,6 +58,10 @@ Route::get('/login', [LoginController::class, 'index']);
 //Register
 Route::get('/register', [RegisterController::class, 'index']);
 
+// CARA BACA: kalo misalkan request ke halaman register tapi methodnya POST maka panggil
+// controller register yang methodnya 'store'
+Route::post('/register', [RegisterController::class, 'store']);
+
 
 
 

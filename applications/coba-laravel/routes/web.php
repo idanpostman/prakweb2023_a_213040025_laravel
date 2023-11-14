@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Models\Category;
 
 use Illuminate\Support\Facades\Route;
@@ -51,18 +52,20 @@ Route::get('/categories', function() {
     ]);
 });
 
-
+// middleware() berfungsi untuk agar tidak bisa nembak akses halaman lewat link 
 // LOGIN
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
 //Register
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 
 // CARA BACA: kalo misalkan request ke halaman register tapi methodnya POST maka panggil
 // controller register yang methodnya 'store'
 Route::post('/register', [RegisterController::class, 'store']);
 
-
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
 
 

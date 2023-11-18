@@ -71,9 +71,13 @@ Route::get('/dashboard', function() {
 })->middleware('auth');
 
 
+//middleware berfungsi agar tidak bisa diakses oleh user yang belum login
+Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])
+->middleware('auth');
 
 Route::resource('/dashboard/posts', DashboardPostController::class)
 ->middleware('auth');
+
 
 
 

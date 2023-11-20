@@ -16,9 +16,7 @@
             <article class="my-3 fs-5">
               {!! $post->body !!} {{-- Melakukan sebuah escaping. sebuah escape character agar tag html dijalankan --}}
             </article>
-
-
-            <a href="/posts" class="d-block mt-3">Back to Posts</a>
+        
         </div>
     </div>
 </div>
